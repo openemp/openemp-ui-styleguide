@@ -5,7 +5,7 @@ module.exports = webpackConfigEnv => {
   const defaultConfig = singleSpaDefaults({
     orgName: "openemp-mf",
     projectName: "styleguide",
-    webpackConfigEnv
+    webpackConfigEnv,
   });
 
   return webpackMerge.smart(defaultConfig, {
@@ -20,12 +20,15 @@ module.exports = webpackConfigEnv => {
               loader: "postcss-loader",
               options: {
                 ident: "postcss",
-                plugins: [require("tailwindcss"), require("autoprefixer")]
-              }
-            }
-          ]
-        }
-      ]
-    }
+                plugins: [require("tailwindcss"), require("autoprefixer")],
+              },
+            },
+          ],
+        },
+      ],
+    },
+    devServer: {
+      port: 9002,
+    },
   });
 };
