@@ -1,5 +1,5 @@
-openemp-ui-styleguide
-=====================
+# openemp-ui-styleguide
+
 OpenEMP Styleguide is the design library for OpenEMP micro-frontend
 
 ### Usage
