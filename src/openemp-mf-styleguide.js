@@ -1,5 +1,5 @@
-import "./set-public-path";
-import "./global.css?modules=false";
+import './set-public-path';
 
-// You can also export React components from this file and import them into your microfrontends
-export { default as Button } from "./button.component.js";
+export * from '@material-ui/core';
+
+// export * from '@material-ui/icons';

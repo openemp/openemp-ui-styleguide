@@ -1,3 +1,3 @@
-import { setPublicPath } from "systemjs-webpack-interop";
+import { setPublicPath } from 'systemjs-webpack-interop';
 
-setPublicPath("@openemp-mf/styleguide");
+setPublicPath('@openemp-mf/styleguide');
