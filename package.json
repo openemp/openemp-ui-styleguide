@@ -3,7 +3,7 @@
   "repository": "git@github.com:openemp/openemp-ui-styleguide.git",
   "author": "OpenEMP",
   "license": "MIT",
-  "version": "0.0.1-alpha-01",
+  "version": "0.0.1-latest",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --mode=production",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.10.0",
     "@babel/plugin-proposal-object-rest-spread": "7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
