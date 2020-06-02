@@ -7,7 +7,7 @@ module.exports = (webpackConfigEnv = {}) => {
   const opts = {
     orgName: 'openemp-mf',
     projectName: 'styleguide',
-    port: 9002,
+    port: 9001,
   };
 
   return {
@@ -44,6 +44,16 @@ module.exports = (webpackConfigEnv = {}) => {
               },
             },
           ],
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              publicPath: 'fonts',
+              outputPath: 'fonts',
+            },
+          },
         },
       ],
     },
