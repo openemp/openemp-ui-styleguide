@@ -27,6 +27,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-material-ui-form-validator": "^2.0.10",
     "systemjs-webpack-interop": "^2.1.1",
     "typeface-roboto": "0.0.75"
   },
@@ -49,6 +50,7 @@
     "concurrently": "^5.2.0",
     "copy-webpack-plugin": "^6.0.1",
     "css-loader": "^3.5.3",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
