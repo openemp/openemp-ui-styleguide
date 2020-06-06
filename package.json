@@ -3,7 +3,7 @@
   "repository": "git@github.com:openemp/openemp-ui-styleguide.git",
   "author": "OpenEMP",
   "license": "MIT",
-  "version": "0.0.1-latest",
+  "version": "0.0.2-latest",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --mode=production",
