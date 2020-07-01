@@ -1,17 +1,23 @@
+const { DefinePlugin } = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { UnusedFilesWebpackPlugin } = require('unused-files-webpack-plugin');
+const DotenvWebpackPlugin = require('dotenv-webpack');
 const path = require('path');
+
+require('dotenv').config();
+
+const { env } = process;
 
 module.exports = (webpackConfigEnv = {}) => {
   const opts = {
-    orgName: 'openemp-mf',
-    projectName: 'styleguide',
-    port: 9002,
+    orgName: env.ORG_NAME,
+    projectName: env.PROJECT_NAME,
+    port: env.PORT,
   };
 
   return {
-    entry: path.resolve(process.cwd(), `src/${opts.orgName}-${opts.projectName}.js`),
+    entry: path.resolve(process.cwd(), `src/index.js`),
     output: {
       filename: `${opts.orgName}-${opts.projectName}.js`,
       libraryTarget: 'system',
@@ -45,6 +51,16 @@ module.exports = (webpackConfigEnv = {}) => {
             },
           ],
         },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              publicPath: 'fonts',
+              outputPath: 'fonts',
+            },
+          },
+        },
       ],
     },
     devtool: 'source-map',
@@ -58,6 +74,7 @@ module.exports = (webpackConfigEnv = {}) => {
     },
     externals: ['react', 'react-dom', 'single-spa', new RegExp(`^@${opts.orgName}/`)],
     plugins: [
+      new DotenvWebpackPlugin(),
       new CleanWebpackPlugin(),
       new BundleAnalyzerPlugin({
         analyzerMode: webpackConfigEnv.analyze ? 'server' : 'disabled',
