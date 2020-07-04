@@ -14,6 +14,7 @@ module.exports = (webpackConfigEnv = {}) => {
     orgName: env.ORG_NAME,
     projectName: env.PROJECT_NAME,
     port: env.PORT,
+    host: env.HOST,
   };
 
   return {
@@ -56,7 +57,7 @@ module.exports = (webpackConfigEnv = {}) => {
           use: {
             loader: 'file-loader',
             options: {
-              publicPath: 'fonts',
+              publicPath: `//${opts.host}:${opts.port}/fonts`,
               outputPath: 'fonts',
             },
           },

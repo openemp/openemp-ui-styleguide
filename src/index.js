@@ -1,4 +1,7 @@
 import './set-public-path';
+import 'typeface-roboto';
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
+
 import * as yup from 'yup';
 import { create as createJss } from 'jss';
 import rtl from 'jss-rtl';
