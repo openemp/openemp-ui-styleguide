@@ -7,5 +7,5 @@ OpenEMP Styleguide is the design library for OpenEMP micro-frontend
 To use the styleguide library in your HTML you can include it as following:
 
 ```
-<script type="systemjs-module" src="import:@openemp-mf/styleguide"></script>
+<script type="systemjs-module" src="import:@openemp/styleguide"></script>
 ```
