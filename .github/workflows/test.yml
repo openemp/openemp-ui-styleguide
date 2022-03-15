@@ -1,9 +1,9 @@
-name: Build and publish NPM package
-on: push
-
+name: Test package
+on: pull_request
 jobs:
-  publish:
+  build-package:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -11,7 +11,4 @@ jobs:
           node-version: 13
       - run: npm install
       - run: npm test
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          access: public
+      - run: npm build
