@@ -13,7 +13,7 @@ app.use(express.static(`${__dirname}/dist`));
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
 app.get('*', (request, response) => {
-  response.sendFile(path.resolve(__dirname, 'dist/openemp-mf-styleguide.js'));
+  response.sendFile(path.resolve(__dirname, 'dist/openemp-styleguide.js'));
 });
 
 app.listen(port);
