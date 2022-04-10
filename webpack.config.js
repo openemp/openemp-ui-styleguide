@@ -1,6 +1,5 @@
-const { merge } = require('webpack-merge');
+const { mergeWithRules } = require('webpack-merge');
 const singleSpaDefaults = require('webpack-config-single-spa-ts');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const DotenvWebpackPlugin = require('dotenv-webpack');
 
@@ -12,8 +11,32 @@ module.exports = (webpackConfigEnv, argv) => {
     argv,
   });
 
-  return merge(defaultConfig, {
-    // modify the webpack config however you'd like to by adding to this object
+  const config = mergeWithRules({
+    module: {
+      rules: {
+        test: 'match',
+        use: 'replace',
+      },
+    },
+  })(defaultConfig, {
+    // customize the webpack config here
     plugins: [new DotenvWebpackPlugin()],
+    module: {
+      rules: [
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              // publicPath: `//${opts.host}:${opts.port}/fonts`,
+              outputPath: 'fonts',
+            },
+          },
+        },
+      ],
+    },
+    externals: ['single-spa', 'react-dom', 'react', new RegExp(`^@${defaultConfig.orgName}/`)],
   });
+
+  return config;
 };
