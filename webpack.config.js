@@ -57,7 +57,7 @@ module.exports = (webpackConfigEnv = {}) => {
           use: {
             loader: 'file-loader',
             options: {
-              publicPath: `//${opts.host}:${opts.port}/fonts`,
+              publicPath: `style-ui/fonts`,
               outputPath: 'fonts',
             },
           },
