@@ -83,9 +83,9 @@
     "style-loader": "^1.2.1",
     "unused-files-webpack-plugin": "^3.4.0",
     "webpack": "^4.46.0",
-    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-bundle-analyzer": "^4.10.1",
     "webpack-cli": "^3.3.11",
-    "webpack-config-single-spa-react": "^1.9.0",
+    "webpack-config-single-spa-react": "^4.0.5",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
   },
